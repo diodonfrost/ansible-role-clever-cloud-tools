@@ -18,7 +18,7 @@ jobs:
       matrix:
         image:
           - almalinux:10
-          - rockylinux:9
+          - rockylinux:10
           - oraclelinux:10
           - amazonlinux:2023
           - fedora:43
@@ -28,7 +28,6 @@ jobs:
           - ubuntu:24.04
           - opensuse:16.0
           - archlinux:latest
-          - alpine:latest
 
     steps:
       - name: Checkout repository
