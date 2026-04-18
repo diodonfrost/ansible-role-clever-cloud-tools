@@ -11,9 +11,9 @@
 
 - name: Windows | Download clever-tools
   ansible.windows.win_get_url:
-    url: "https://clever-tools.clever-cloud.com/releases/{{ clever_tools_version_to_install }}/clever-tools-{{ clever_tools_version_to_install }}_win.zip"
-    dest: '%TEMP%\clever-tools-{{ clever_tools_version_to_install }}_win.zip'
-  when: clever_tools_version_to_install not in (clever_tools_installed_version.stdout_lines | default(['empty']) | first)
+    url: "https://clever-tools.clever-cloud.com/releases/{{ clever_tools_version }}/clever-tools-{{ clever_tools_version }}_win.zip"
+    dest: '%TEMP%\clever-tools-{{ clever_tools_version }}_win.zip'
+  when: clever_tools_version not in (clever_tools_installed_version.stdout_lines | default(['empty']) | first)
 
 - name: Windows | Create clever-tools folder
   ansible.windows.win_file:
@@ -22,9 +22,9 @@
 
 - name: Windows | Install clever-tools
   community.windows.win_unzip:
-    src: '%TEMP%\clever-tools-{{ clever_tools_version_to_install }}_win.zip'
+    src: '%TEMP%\clever-tools-{{ clever_tools_version }}_win.zip'
     dest: "{{ clever_tools_path }}"
-  when: clever_tools_version_to_install not in (clever_tools_installed_version.stdout_lines | default(['empty']) | first)
+  when: clever_tools_version not in (clever_tools_installed_version.stdout_lines | default(['empty']) | first)
 
 - name: Windows | Add clever-tools to PATH
   ansible.windows.win_path:
