@@ -1,0 +1,51 @@
+---
+galaxy_info:
+  namespace: diodonfrost
+  role_name: clever_cloud_tools
+  author: diodonfrost
+  description: Ansible role for installing Clever Cloud CLI tools
+  license: Apache-2.0
+
+  min_ansible_version: "2.10"
+
+  platforms:
+    - name: EL
+      versions:
+        - "8"
+        - "9"
+    - name: Fedora
+      versions:
+        - "39"
+        - "40"
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+        - noble
+    - name: Amazon
+      versions:
+        - all
+    - name: Alpine
+      versions:
+        - all
+    - name: ArchLinux
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - all
+    - name: Windows
+      versions:
+        - all
+
+  galaxy_tags:
+    - system
+    - cloud
+    - clevercloud
+    - cli
+
+dependencies: []

@@ -1,0 +1,13 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Windows | clever should be functional
+      ansible.windows.win_command: clever version
+      register: clever_result
+
+    - name: Windows | Verify commands outputs
+      ansible.builtin.assert:
+        that:
+          - clever_result.rc == 0
+        success_msg: "All tests passed"

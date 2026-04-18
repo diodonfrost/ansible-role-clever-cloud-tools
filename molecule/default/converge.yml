@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  roles:
+    - role: diodonfrost.clever_cloud_tools
+      clever_cloud_tools_version: "{{ lookup('env', 'clever_cloud_tools_version') | default('latest', true) }}"

@@ -1,0 +1,11 @@
+---
+# defaults file for ansible-role-clever-cloud-tools
+
+# Define clever-tools version to install
+# Possible values: latest, or a specific version number (e.g. 3.9.0)
+# Default: latest
+clever_tools_version: latest
+
+# Define where to install clever binary
+# Default: use local system path defined in Ansible vars/*.yml
+clever_tools_path: "{{ _clever_tools_default_path }}"

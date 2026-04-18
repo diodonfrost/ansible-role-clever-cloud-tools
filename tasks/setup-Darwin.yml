@@ -1,0 +1,18 @@
+---
+# tasks file for install clever-tools on Darwin system
+
+# This task avoids downloading terragrunt every time
+- name: Darwin | Check if clever cloud tools is present with the right version
+  ansible.builtin.command: "{{ clever_tools_path }}/clever version"
+  register: clever_tools_installed_version
+  ignore_errors: true
+  changed_when: false
+  failed_when: false
+
+- name: Darwin | Download and extract clever-tools
+  ansible.builtin.unarchive:
+    src: "https://clever-tools.clever-cloud.com/releases/{{ clever_tools_version }}/clever-tools-{{ clever_tools_version }}_macos.tar.gz"
+    dest: "{{ clever_tools_path }}"
+    remote_src: true
+    extra_opts: ['--strip-components=1']
+  when: clever_tools_version not in clever_tools_installed_version.stdout | default('empty')
