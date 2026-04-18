@@ -1,3 +1,4 @@
 ---
-# vars file for clever-tools in macOS system
+# vars file for clever-tools in Darwin system
 _clever_tools_default_path: /usr/local/bin
+_clever_tools_default_pkg_url: "https://clever-tools.clever-cloud.com/releases/{{ clever_tools_version }}/clever-tools-{{ clever_tools_version }}_macos.tar.gz"

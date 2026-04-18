@@ -5,4 +5,11 @@
   ansible.builtin.include_vars: "{{ ansible_facts['system'] }}.yml"
 
 - name: Install clever-tools
-  ansible.builtin.include_tasks: "setup-{{ ansible_facts['system'] }}.yml"
+  ansible.builtin.include_tasks: "{{ lookup('ansible.builtin.first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "setup-{{ ansible_facts['system'] }}.yml"
+        - "setup-Linux-Unix.yml"
+      paths:
+        - "tasks"

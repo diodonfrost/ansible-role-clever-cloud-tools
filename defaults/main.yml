@@ -9,3 +9,7 @@ clever_tools_version: latest
 # Define where to install clever binary
 # Default: use local system path defined in Ansible vars/*.yml
 clever_tools_path: "{{ _clever_tools_default_path }}"
+
+# Define the URL of the clever-tools archive to download
+# Default: use the URL defined in Ansible vars/*.yml
+clever_tools_pkg_url: "{{ _clever_tools_default_pkg_url }}"
