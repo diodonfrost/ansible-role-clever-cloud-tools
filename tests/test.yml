@@ -2,4 +2,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - role: ansible-role-clever-cloud-tools
+    - role: diodonfrost.clever-cloud-tools
+
